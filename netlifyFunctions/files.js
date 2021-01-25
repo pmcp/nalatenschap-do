@@ -5,7 +5,7 @@ const {
   downloadFile,
   checkFolder,
   sendSession,
-} = require('./helperFuntions/webdav.js');
+} = require('/webdav.js');
 
 // Move to helper library
 function splitPath(path) {
