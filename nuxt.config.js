@@ -1,5 +1,5 @@
 const pkg = require('./package');
-import redirectSSL from 'redirect-ssl'
+import redirectSSL from 'redirect-ssl';
 
 module.exports = {
   mode: 'universal',
@@ -29,13 +29,12 @@ module.exports = {
   //   // { path: '/server-middleware', handler: '~/server-middleware/index.js' },
   // ],
 
-
-  serverMiddleware: [
-    redirectSSL.create({
-      enabled: process.env.NODE_ENV === 'production'
-     }),
-     '~/serverMiddleware/ok'
-  ]
+  // serverMiddleware: [
+  //   redirectSSL.create({
+  //     enabled: process.env.NODE_ENV === 'production'
+  //    }),
+  //    '~/serverMiddleware/ok'
+  // ]
 
   /*
    ** Global CSS
@@ -89,6 +88,7 @@ module.exports = {
   /*
    ** Build configuration
    */
+  target: 'static',
   build: {
     /*
      ** You can extend webpack config here
