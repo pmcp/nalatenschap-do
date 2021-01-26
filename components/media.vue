@@ -1,19 +1,19 @@
 <template>
-  <div 
-    v-if="media" 
+  <div
+    v-if="media"
     class="pmcp-grid">
-    <div 
-      v-for="(i, key) in media" 
+    <div
+      v-for="(i, key) in media"
       :key="key">
-      <button 
-        :disabled="mediaStatus.id === 1" 
+      <button
+        :disabled="mediaStatus.id === 1"
         @click="next(i)">
-        {{ i }}
+        <!-- {{ i.url }} -->
         <div v-if="i.mime === 'text/plain'" />
-        <div 
-          v-else 
+        <div
+          v-else
           class="filtered blue">
-          <img :src="i.url" >
+          <img :src="`data:image/png;base64,${i.url}`" >
         </div>
       </button>
     </div>

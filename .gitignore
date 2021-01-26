@@ -3,6 +3,9 @@
 # Added because i'm pushing the media files in this folder
 static
 
+# Where the netlify functions get build
+lambda
+
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
 # Logs
@@ -93,3 +96,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Local Netlify folder
+.netlify

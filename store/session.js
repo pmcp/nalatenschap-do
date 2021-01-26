@@ -39,8 +39,7 @@ export const actions = {
   async sendSession({ state, commit }) {
     console.log("Starting to send selection");
     commit("setStatus", 1);
-
-    const res = await this.$axios.get("/api/sendSession", {
+    const res = await this.$axios.get("/.netlify/functions/sendSession", {
       params: {
         session: JSON.stringify(state.items),
         user: JSON.stringify(state.user)

@@ -70,11 +70,12 @@ export const actions = {
       console.log(items, itemId);
       console.log("the file", file);
       if (file == undefined) return null;
-      const res = await this.$axios.get("/api/getFile", {
+      const res = await this.$axios.get("/.netlify/functions/getFile", {
         params: {
           path: file.filename
         }
       });
+      console.log("THE RES", res);
       // console.log('test with state', state)
       // console.log('the downloadLink we got back from server', res.data)
 
