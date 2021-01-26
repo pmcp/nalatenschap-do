@@ -7,19 +7,7 @@ const {
   sendSession,
 } = require('../helpers/webdav.js');
 
-// Move to helper library
-function splitPath(path) {
-  const regex = /^(.+)\/([^\/]+)$/gm;
-  let m;
-  while ((m = regex.exec(path)) !== null) {
-    // This is necessary to avoid infinite loops with zero-width matches
-    if (m.index === regex.lastIndex) {
-      regex.lastIndex++;
-    }
-
-    return m;
-  }
-}
+const { splitPath } = require('../helpers/tools.js');
 
 exports.handler = async function(event, context) {
   const path = event.queryStringParameters.path;
