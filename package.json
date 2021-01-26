@@ -22,6 +22,7 @@
     "fs": "0.0.1-security",
     "lodash": "^4.17.20",
     "mkdirp": "^1.0.4",
+    "netlify-lambda": "^2.0.3",
     "nuxt": "^2.0.0",
     "serve": "^11.3.2",
     "vue-scrollto": "^2.20.0",
