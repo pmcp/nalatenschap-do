@@ -4,7 +4,7 @@
 static
 
 # Where the netlify functions get build
-lambda
+
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
