@@ -149,7 +149,7 @@ async function downloadFile(fullPath, directory, fileName) {
   // return new Promise((resolve, reject) => {
   // let write = fs.createWriteStream('./static/' + fileName);
   const downloadUrl = await getDownloadUrl(fullPath);
-  console.log('THE DOWNLOADURL', downloadUrl);
+  // console.log('THE DOWNLOADURL', downloadUrl);
   const options = {
     string: true,
     // headers: {
@@ -158,7 +158,7 @@ async function downloadFile(fullPath, directory, fileName) {
   };
 
   const image = await encode(downloadUrl, options);
-  console.log('ENCODE', image);
+  // console.log('ENCODE', image);
   return image;
   // const decoded = await decode(image, { fname: 'example', ext: 'jpg' });
   // console.log('DECODE', decoded);
@@ -177,7 +177,7 @@ async function writeFile(path, content) {
   // writeFile function with filename, content and callback function
   fs.writeFile(path, content, function(err) {
     if (err) throw err;
-    console.log('File is created successfully.');
+    // console.log('File is created successfully.');
     return;
   });
 }
@@ -185,7 +185,7 @@ async function writeFile(path, content) {
 async function sendSession(user, session) {
   // TODO: Add language
   return new Promise((resolve, reject) => {
-    console.log(user.first, user.last, session);
+    // console.log(user.first, user.last, session);
     const fileName = user.first + '_' + user.last + '_' + Date.now() + '.txt';
 
     // Create the text file
@@ -196,10 +196,10 @@ async function sendSession(user, session) {
     }
 
     const localPath = './sessions/' + fileName;
-    console.log(
-      `Creating a local file with path ${localPath} & items:`,
-      session
-    );
+    // console.log(
+    //   `Creating a local file with path ${localPath} & items:`,
+    //   session
+    // );
 
     let writeLocally = writeFile(localPath, content);
     const writeRemote = client.createWriteStream(
