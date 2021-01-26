@@ -1,5 +1,5 @@
 const pkg = require('./package');
-import redirectSSL from 'redirect-ssl';
+// import redirectSSL from 'redirect-ssl';
 
 module.exports = {
   mode: 'universal',
@@ -59,21 +59,24 @@ module.exports = {
    ** Axios module configuration
    */
 
+  // axios: {
+  //   // See https://github.com/nuxt-community/axios-module#options
+  //   // baseURL: 'https://nalatenschap-do-hfuai.ondigitalocean.app',
+  //   // credentials: true,
+  //   // proxy: false,
+  //   // debug: true,
+  //   // retry: {
+  //   //   retries: 3,
+  //   // },
+  //   // requestInterceptor: (config, { store }) => {
+  //   //   config.headers.common['Authorization'] = '';
+  //   //   config.headers.common['Content-Type'] =
+  //   //     'application/x-www-form-urlencoded;application/json';
+  //   //   return config;
+  //   // },
+  // },
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-    // baseURL: 'https://nalatenschap-do-hfuai.ondigitalocean.app',
-    // credentials: true,
-    // proxy: false,
-    // debug: true,
-    // retry: {
-    //   retries: 3,
-    // },
-    // requestInterceptor: (config, { store }) => {
-    //   config.headers.common['Authorization'] = '';
-    //   config.headers.common['Content-Type'] =
-    //     'application/x-www-form-urlencoded;application/json';
-    //   return config;
-    // },
+    baseURL: '/',
   },
 
   // publicRuntimeConfig: {

@@ -10,7 +10,9 @@
     "start": "node sammy.js; serve -s _static -l tcp://0.0.0.0:${PORT:-3000} -n",
     "export": "nuxt export",
     "serve": "nuxt serve",
-    "generate": "nuxt generate"
+    "postinstall": "netlify-lambda install",
+    "lambda-serve": "netlify-lambda serve functions",
+    "lambda-build": "netlify-lambda build functions"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
@@ -21,7 +23,6 @@
     "lodash": "^4.17.20",
     "mkdirp": "^1.0.4",
     "nuxt": "^2.0.0",
-    "redirect-ssl": "^2.0.0",
     "serve": "^11.3.2",
     "vue-scrollto": "^2.20.0",
     "webdav": "^3.6.2",

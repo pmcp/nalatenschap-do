@@ -53,7 +53,7 @@ export const actions = {
     //   '/fotografie en eigen werk/GANSBERG KOEKELHOREN'
     // )
 
-    const res = await this.$axios.get("/api/checkFolder", {
+    const res = await this.$axios.get("/.netlify/functions/getFolder", {
       params: {
         path: "/fotografie en eigen werk/GANSBERG KOEKELHOREN"
       }
