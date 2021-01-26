@@ -146,31 +146,21 @@ async function checkFolder(directory, goUpOne = false) {
 }
 
 async function downloadFile(fullPath, directory, fileName) {
-  // return new Promise((resolve, reject) => {
-  // let write = fs.createWriteStream('./static/' + fileName);
-  const downloadUrl = await getDownloadUrl(fullPath);
-  // console.log('THE DOWNLOADURL', downloadUrl);
-  const options = {
-    string: true,
-    // headers: {
-    //   "User-Agent": "my-app"
-    // }
-  };
+  return new Promise((resolve, reject) => {
+    let write = fs.createWriteStream('./static/' + fileName);
+    client.createReadStream(fullPath).pipe(write);
+    write.on('finish', resolve);
+  });
 
-  const image = await encode(downloadUrl, options);
-  // console.log('ENCODE', image);
-  return image;
-  // const decoded = await decode(image, { fname: 'example', ext: 'jpg' });
-  // console.log('DECODE', decoded);
-
+  //   const downloadUrl = await getDownloadUrl(fullPath);
   //
-  //     console.log('THE PATH', fullPath);
-  //     const imageAsBase64 = fs.readFileSync(fullPath, 'base64');
-  //     // client.createReadStream(fullPath).pipe(write);
+  //   console.log('THE DOWNLOADURL', downloadUrl);
+  //   const options = {
+  //     string: true,
+  //   };
   //
-  //     console.log('THE IMAGE AS Base64', imageAsBase64);
-  //     write.on('finish', resolve);
-  // });
+  //   const image = await encode(downloadUrl, options);
+  //   return image;
 }
 
 async function writeFile(path, content) {

@@ -13,7 +13,8 @@
         <div
           v-else
           class="filtered blue">
-          <img :src="`data:image/png;base64,${i.url}`" >
+          <img :src="i.url" >
+          <!-- <img :src="`data:image/png;base64,${i.url}`" > -->
         </div>
       </button>
     </div>
